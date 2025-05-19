@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>CRUD de Máquinas</title>
+  <link rel="stylesheet" href="style.css"/>
+  <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <span>Cadastro de Máquinas</span>
+      <button onclick="openModal()" id="new">Incluir</button>
+    </div>
+
+    <div class="divTable">
+      <table>
+        <thead>
+          <tr class="header-row">
+            <th>Modelo</th>
+            <th>Tipo de Leitor</th>
+            <th>Nº de Série</th>
+            <th>Data de Fabricação</th>
+            <th>Cliente</th>
+            <th>Local</th>
+            <th>Status</th>
+            <th>Firmware</th>
+          </tr>
+          <tr class="filter-row">
+            <th><input type="text" id="filter-modelo" placeholder="Filtrar" /></th>
+            <th>
+              <select id="filter-tipo">
+                <option value="">Todos</option>
+                <option value="Cédulas">Cédulas</option>
+                <option value="Moedas">Moedas</option>
+                <option value="Ambos">Ambos</option>
+              </select>
+            </th>
+            <th><input type="text" id="filter-serie" placeholder="Filtrar" /></th>
+            <th><input type="date" id="filter-data" /></th>
+            <th><input type="text" id="filter-cliente" placeholder="Filtrar" /></th>
+            <th><input type="text" id="filter-local" placeholder="Filtrar" /></th>
+            <th>
+              <select id="filter-status">
+                <option value="">Todos</option>
+                <option value="Ativa">Ativa</option>
+                <option value="Manutenção">Manutenção</option>
+                <option value="Desativada">Desativada</option>
+              </select>
+            </th>
+            <th><input type="text" id="filter-firmware" placeholder="Filtrar" /></th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+
+    <div class="modal-container">
+      <div class="modal">
+        <form>
+          <label for="m-modelo">Modelo</label>
+          <input id="m-modelo" type="text" required />
+
+          <label for="m-tipo">Tipo de Leitor</label>
+          <select id="m-tipo" required>
+            <option value="">Selecione</option>
+            <option value="Cédulas">Cédulas</option>
+            <option value="Moedas">Moedas</option>
+            <option value="Ambos">Ambos</option>
+          </select>
+
+          <label for="m-serie">Número de Série</label>
+          <input id="m-serie" type="text" required />
+
+          <label for="m-data">Data de Fabricação</label>
+          <input id="m-data" type="date" required />
+
+          <label for="m-cliente">Cliente Vinculado</label>
+          <input id="m-cliente" type="text" required />
+
+          <label for="m-local">Local de Instalação</label>
+          <input id="m-local" type="text" required />
+
+          <label for="m-status">Status</label>
+          <select id="m-status" required>
+            <option value="">Selecione</option>
+            <option value="Ativa">Ativa</option>
+            <option value="Manutenção">Manutenção</option>
+            <option value="Desativada">Desativada</option>
+          </select>
+
+          <label for="m-firmware">Versão do Firmware</label>
+          <input id="m-firmware" type="text" required />
+
+          <button id="btnSalvar">Salvar</button>
+        </form>
+      </div>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
